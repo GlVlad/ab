@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aboba</title>
+    <style>
+.wrapper {
+    height: 300px;
+    padding: 50px;
+    border: 1px solid grey;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    position: relative;
+}
+
+#move-button{
+    position: absolute;
+    transition: all 0.1s linear 0s;
+    margin-left: 650px;
+    margin-top: 25px;
+}
+
+#button{
+    position: absolute;
+    margin-left: 750px;
+    margin-top: 25px;
+
+}
+
+#text1{
+    margin-left: 675px;
+    margin-top: 125px;
+}
+
+#text2{
+    margin-left: 695px;
+}
+
+#img{
+    width: 300px;
+    height: 300px;
+    margin-left: 550px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <img id="img" style="display: none" src="./sticker.jpg">
+            <p id="text2" style="display: none;">ГЫ</p>
+        </div>
+        <div>
+            <p id="text1">В жопу дашь?</p>
+        </div>
+        <div>
+            <input type="button" value="Нет" id="move-button">
+        </div>
+        <div>
+            <input type="button" value="Да" id="button" onclick="myImg()">
+        </div>
+    </div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script>
+    $(document).on('mousemove', function (e) {
+        $('#move-button').css({
+        })
+    })
+
+    function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    $("#move-button").hover(function () { 
+    $(this).css({
+        top: getRandomInt(0, 150)+"px",
+        left: getRandomInt(0, 150)+"px"
+    });
+    }, function () { });
+    function myImg() {
+        document.getElementById('img').style.display='block';
+        document.getElementById('text2').style.display='block';
+        document.getElementById('move-button').style.display='none';
+        document.getElementById('button').style.display='none';
+        document.getElementById('text1').style.display='none';
+    }
+
+</script>
+</body>
+</html>
+
